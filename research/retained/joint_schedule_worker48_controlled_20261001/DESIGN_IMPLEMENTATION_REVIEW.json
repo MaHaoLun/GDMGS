@@ -1,0 +1,92 @@
+{
+  "reviewer": "independent subagent review_schedule_design",
+  "decision": "pass",
+  "blocking_findings": [],
+  "scope": "48w-only route review; no GPU work launched by reviewer.",
+  "reviewed_sha256": {
+    "DESIGN.json": "836ffd85de78537505c3824fe03e4abb5aceb17c3fbc9733447ea1aa296e1ad9",
+    "resources.json": "9dae762ca6b30166013b531ed92ad28a552db573d677be6cbd1cd56414ab3cb5",
+    "final_runner.py": "74bae6655c27d1088c270c39789499d7d5d9edfff42af8b46058cbf2c56e11d4",
+    "selection_generalized.py": "802fc627fc363f872071e798be2ae24e1a5c0bd337e73db0abaa6314c637481d",
+    "selection.py": "afcc918d7df52d0c578b07f9c190d72e149841ef2e8a29d72dd179073a14c30a",
+    "audit_final.py": "704d89b8241f09269547d4cd3a797871afa3d49fdd571a7a1be17a94e360c0e4",
+    "RUN.sh": "cca2015c2b0afaa5eef50ba2e7bff9adac3f732fb37ac7af0f385849d8ffd26c"
+  },
+  "coverage": {
+    "scenes": 8,
+    "profiles": [
+      "48w"
+    ],
+    "arms": [
+      "GPU_only",
+      "CPU_only",
+      "hybrid_equal",
+      "ours"
+    ],
+    "formal_trajectories": 32,
+    "targets_per_trajectory": 125,
+    "formal_target_executions": 4000
+  },
+  "resource_checks": {
+    "worker_pool_upper_bound": 48,
+    "logical_query_positions": 48,
+    "physical_query_cores": 40,
+    "additional_SMT_query_positions": 8,
+    "helper_physical_cores": 8,
+    "query_and_helper_physical_sets_disjoint": true,
+    "first16_positions_equal_original": true,
+    "topology_evidence": "Same-host96CPU snapshot verified mapping; actual runtime logical/physical participation recorded perquery/batch.",
+    "GPU": "PhysicalGPU1,expectedUUID GPU-70c08b0a-aa12-0aeb-34a5-7d9777492d18",
+    "scope": "Shared host; no claim of48distinctphysicalquerycores orfull48worker participation."
+  },
+  "passed_checks": [
+    {
+      "item": "Legacy execution restored",
+      "detail": "Per-pose executor queue restored; no pool-prestart barrier,chunk launch barrier,forced-participation assertion orCPU>=96 restriction. GPU submissions remain first,with original helperaffinity."
+    },
+    {
+      "item": "Core algorithm unchanged",
+      "detail": "AST comparisons independently confirm CPU query function,GPUWorkerOpt.many,andmaterialize are identical toprevious reviewed optimized baseline. Core native/CUDA semantics remain purejointquery withoutdepth/occlusion."
+    },
+    {
+      "item": "Allocation andGPUsettings",
+      "detail": "Original12quotas1/2/4/6/8/10/12/14/16/24/32/48 receive3pairedfull125 S1 measurements. AmsterdamCPU8 exception retained; others selectbestpositive median orCPU0. OriginalperSceneGPUconcurrency4/2/4/2/4/4/2/4 is frozen. Choices arefixedbeforeE2E."
+    },
+    {
+      "item": "Scope enforcement",
+      "detail": "RUN setsSCHEDULE_PROFILE48w,CUDA_VISIBLE_DEVICES1,andchecksreviewPASS/resourcesresolved/profiles48w-only before8sequentialscenes. Selector rejects anyprofile otherthan48w. Onlyfourtablearms,twofullwarmups andoneformalpass each; no16w/B/P/batch sweeps."
+    },
+    {
+      "item": "Buffer andbarrier correctness",
+      "detail": "Per-worker buffers/H2Dstream remainprivate; H2D event completes beforereuse/return. Batch waitsforallCPU/GPUqueries beforematerialization. No newbarrierdeadlock introduced."
+    },
+    {
+      "item": "Quality andtiming",
+      "detail": "CPU/GPU mesh/anchorparity andLoDexception attribution retained. Everyqualityarm verifiesdevice-referenceIDhashes andfiniteRGB/alpha/depth. Full125 targets,32K4groups withtail,stage endpoints andclosure checks preserved."
+    },
+    {
+      "item": "Audit andreporting",
+      "detail": "Audit acceptsactualparticipation boundedbypoolsize ratherthanforcing48. It checksactualaffinity,strictframecoverage/rendercoverage/groupends/sourceposes,stage recomputation,FPS,calibrationclosure,andper-scenequota/GPUchoice. Aggregate denominator1000targets perarm iscorrect."
+    }
+  ],
+  "nonblocking_findings": [
+    {
+      "id": "N2",
+      "detail": "Some internaltext still saysbothprofiles orcontainsunused16w branches. Actualroute isasserted48w-only; do notdescribe a fresh16w pairedcontrol inuser-facingresults."
+    },
+    {
+      "id": "N3",
+      "detail": "48workers is acapacity bound over40physicalcores plus8SMTpositions,not48physicalcores. Preserveactualparticipation/peakstatistics; Oursquota8 mayuse farfewerworkers."
+    },
+    {
+      "id": "N4",
+      "detail": "Only48w isrerun. Historical16w results mayprovide context butcannot establisha fresh pairedcausal speedup fromchangingthecap. KeepoldB/P/batchnumbers outofnewresults."
+    },
+    {
+      "id": "N5",
+      "detail": "CPU0 fallback mustbeexplicitly identified asGPU-only allocation; negative48w outcomes mustremain. WarmE2E excludescalibration andmustnot bedescribed asfirst-use latency."
+    }
+  ],
+  "launch_recommendation": "PASS for the user-authorized48w-only,four-arm,sequentialGPU1 experiment. Allruntime correctness,provenance,coverage andtiming gates remain mandatory.",
+  "resolved_followup": "Reviewed final runtime GPU UUID assertion,import-time48logical/40physical/helper-disjoint/first16-order topology checks,andhardware audit assertions. No mathematical query changes."
+}

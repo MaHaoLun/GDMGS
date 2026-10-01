@@ -1,0 +1,23 @@
+# Python 3.10. Install matching CUDA PyTorch wheels before these packages.
+# These are compatible source-build constraints, not a reproduced environment lock.
+torch==2.4.0
+torchvision==0.19.0
+gsplat==1.4.0
+numpy>=1.26,<2
+scipy>=1.11,<1.15
+einops==0.8.1
+colorama==0.4.6
+jaxtyping==0.3.3
+lpips==0.1.4
+open3d==0.19.0
+opencv-python-headless==4.10.0.84
+OpenEXR>=3.2,<3.4
+Pillow>=10,<12
+plyfile>=1.0,<1.2
+trimesh>=4,<5
+tqdm>=4.66,<5
+wandb>=0.17,<1
+tensorboard>=2.15,<3
+ninja>=1.11
+pybind11>=2.12,<3
+nvdiffrast @ git+https://github.com/NVlabs/nvdiffrast.git@abb07ca0358f3a21c3942b50c54aa1eacd329af9

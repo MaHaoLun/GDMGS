@@ -1,0 +1,64 @@
+{
+  "host": "zxcpu2",
+  "read_only_inspection_date": "2026-10-01",
+  "cachegs": {
+    "source": "/home/zyl/lun/GDMGS_Codebase",
+    "training_identity": "equal to all 8 January training backup train.py files after replacing only the output-root literal",
+    "model_runs": "/ssddata/lun/cachegs/outputs/bungeenerf",
+    "model_config": "config.yaml model_config/GaussianLoDModel",
+    "storage_policy": "scale and rotation stored as FP16, returned to renderer as FP32",
+    "lod_position": "anchor"
+  },
+  "proxygs_experiments": {
+    "source": "proxygs_step2_20260913",
+    "model_runs": "/ssddata/lun/gdmgs_artifacts/proxygs_step2_20260913/runs/bungee",
+    "training_command_present": true,
+    "exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "model_config": "cfg_args",
+    "storage_policy": "FP32 full bundle",
+    "lod_position": "anchor plus half-voxel offset"
+  },
+  "scenes": [
+    "amsterdam",
+    "barcelona",
+    "bilbao",
+    "chicago",
+    "hollywood",
+    "pompidou",
+    "quebec",
+    "rome"
+  ],
+  "cachegs_anchor_counts": [
+    1127842,
+    1333612,
+    1023244,
+    1091705,
+    955652,
+    1115493,
+    1045629,
+    1303845
+  ],
+  "proxygs_anchor_counts": [
+    1071350,
+    1225071,
+    1007265,
+    1112364,
+    1060625,
+    1085288,
+    1102347,
+    1287892
+  ],
+  "same_checkpoint": false,
+  "source_chat": "codex://threads/01a0f290-a266-7891-a5f3-f378f865bdfe",
+  "query_source_chat": "codex://threads/01a0d265-b581-7bf2-87f8-58cad875da3f",
+  "scope": "Source/model comparison and local integration; no GPU run, no upload to zxcpu2. Query/schedule variant adjudication deferred by user."
+}
