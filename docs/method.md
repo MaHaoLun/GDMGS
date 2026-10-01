@@ -7,7 +7,7 @@ Sources were selected using the supplied method TeX and the
 
 | Method stage | Complete implementation |
 | --- | --- |
-| Proxy-aware training/model/checkpoint | Bundled original `train.py`, `scene`, `gaussian_renderer`, native raster/backward kernels |
+| Original training/model/checkpoint | Default CacheGS/GDMGS_Codebase source and YAML loader; explicit historical ProxyGS compatibility |
 | Anchor bounds and Morton radix index | `gdmgs/anchor_frustum/gpu_construction.py` and all native construction/query sources |
 | CPU Cull/Keep/Descend | `system/cpu_select.cpp`, including active-hole propagation and contiguous subtree reporting |
 | Solid classification and merge | `system/occupancy.py`, exposed by `scripts/prepare_occluders.py` |
@@ -65,3 +65,21 @@ the TeX, without changing which anchors belong to each target.
 This task was restricted to local work by the user. CUDA compilation/execution,
 original-checkpoint tensor parity and full target quality were not run for this
 integration. No historical PASS is reused as its acceptance result.
+
+## Model source correction
+
+The default training/model implementation is now the remotely verified
+CacheGS/GDMGS_Codebase snapshot. Eight January training backups differ from
+its training entrypoint only in the output-root literal. The later experimental
+model lineage is retained explicitly and must not be labeled as the training
+foundation of GDM-GS. See `source_audit.json` for both checkpoint inventories.
+
+The CacheGS decoder stores scale/rotation as FP16 then materializes them as FP32.
+The new `model_bridge.py` preserves that rounding and complete row ownership.
+It calls pose-local decoding instead of mutating shared fVDB state. CacheGS LoD
+positions use the anchor itself; only the historical backend uses its half-voxel
+shift. No checkpoint is silently translated into the other model format.
+
+The user requested deferring query/schedule-variant adjudication. Retained
+original implementations are therefore also stored under `research/retained/`
+without selecting a new algorithm or importing their experiment launchers.

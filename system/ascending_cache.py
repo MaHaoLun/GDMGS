@@ -9,8 +9,8 @@ from typing import Callable, Optional
 
 import torch
 
-from gaussian_renderer.raster_batch import BundleMetadata, NeuralGaussianBatch
-from gdmgs.cache.full_bundle_cache import CacheIdentity, _segment_rows
+from batch import BundleMetadata, NeuralGaussianBatch
+from full_bundle_cache import CacheIdentity, _segment_rows
 
 FIELDS = ("xyz", "color", "opacity", "scaling", "rotation")
 
@@ -128,7 +128,7 @@ class TemporalBundleCache:
         stats["decoded_anchors"] += ids.numel()
         # Empty calls are forbidden: build an empty contract from a typed template.
         if not ids.numel():
-            from gdmgs.cache.full_bundle_cache import FullBundleCacheCore
+            from full_bundle_cache import FullBundleCacheCore
             core = FullBundleCacheCore(identity=self.identity, anchor_levels=self.levels,
                                        capacity_rows=self.capacity_rows, n_offsets=self.n_offsets)
             return core._empty_fresh_batch(ids, self.levels[ids])

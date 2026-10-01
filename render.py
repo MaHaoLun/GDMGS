@@ -10,6 +10,7 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--verify', action='store_true', help='check every selection, group decode and output')
     args = parser.parse_args()
-    configure()
+    config = json.loads(args.config.read_text())
+    configure(config.get('model_backend', 'cachegs'))
     from full_system import run
-    run(json.loads(args.config.read_text()), args.output, args.verify)
+    run(config, args.output, args.verify)

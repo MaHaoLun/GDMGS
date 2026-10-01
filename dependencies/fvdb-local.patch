@@ -1,0 +1,127 @@
+diff --git a/fvdb/setup.py b/fvdb/setup.py
+index f2b7f9a6..8d3f7e91 100644
+--- a/fvdb/setup.py
++++ b/fvdb/setup.py
+@@ -5,6 +5,7 @@ import shutil
+ import requests
+ from tqdm import tqdm
+ from pathlib import Path
++import sys
+ 
+ import git
+ import git.repo
+@@ -13,6 +14,9 @@ import tarfile
+ from setuptools import setup
+ from torch.utils import cpp_extension
+ 
++if "TORCH_CUDA_ARCH_LIST" not in os.environ:
++    os.environ["TORCH_CUDA_ARCH_LIST"] = "6.1;7.0;7.5;8.0;8.6+PTX"
++
+ 
+ class FVDBBuildCommand(cpp_extension.BuildExtension):
+ 
+@@ -70,6 +74,14 @@ class FVDBBuildCommand(cpp_extension.BuildExtension):
+         if _ext.name == 'fvdb._Cpp':
+             _ext.library_dirs.append(path)
+ 
++        # PyTorch's ninja build rule does not create parent folders for object files.
++        # Ensure the per-source output directories exist before we delegate to the parent
++        # implementation so nvcc/clang do not fail with "can't create ... No such file or directory".
++        os.makedirs(self.build_temp, exist_ok=True)
++        if getattr(_ext, "sources", None):
++            for obj_path in self.compiler.object_filenames(_ext.sources, output_dir=self.build_temp):  # type: ignore[attr-defined]
++                os.makedirs(os.path.dirname(obj_path), exist_ok=True)
++
+         super().build_extension(_ext)
+ 
+         if _ext.name == 'fvdb.fvdblib':
+@@ -138,7 +150,7 @@ class FVDBBuildCommand(cpp_extension.BuildExtension):
+ 
+         # Find all the headers and copy them into the build directory.
+         # This way extension modules of FVDB can include them.
+-        nanopath = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'nanovdb')
++        nanopath = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'nanovdb', 'nanovdb')
+         fvdb_headers = get_header_files_recursive('src', 'fvdb')
+         nanovdb_headers = get_header_files_recursive(nanopath, 'nanovdb')
+ 
+@@ -228,11 +240,28 @@ if __name__ == "__main__":
+     # Use new C++ standard for newer NVCC versions
+     cuda_home = cpp_extension.CUDA_HOME
+     cuda_version = None
++    cuda_include_dirs_extra: list[str] = []
+     if cuda_home is not None:
+         cuda_version_str = subprocess.check_output([cuda_home + "/bin/nvcc", '--version']).strip().decode()
+         cuda_version = re.search(r'release (\d+[.]\d+)', cuda_version_str)
+         if cuda_version is not None:
+             cuda_version = cuda_version.group(1)
++        cuda_targets_include = Path(cuda_home) / "targets" / "x86_64-linux" / "include"
++        if cuda_targets_include.is_dir():
++            cuda_include_dirs_extra.append(str(cuda_targets_include))
++
++    # Newer CUDA toolkit layouts ship headers with the Python packages.
++    nvidia_cuda_runtime_include = (
++        Path(sys.prefix)
++        / "lib"
++        / f"python{sys.version_info.major}.{sys.version_info.minor}"
++        / "site-packages"
++        / "nvidia"
++        / "cuda_runtime"
++        / "include"
++    )
++    if nvidia_cuda_runtime_include.is_dir():
++        cuda_include_dirs_extra.append(str(nvidia_cuda_runtime_include))
+ 
+     if cuda_version is not None and int(cuda_version.split('.')[0]) >= 12:
+         cpp_std = "c++20"
+@@ -260,7 +289,7 @@ if __name__ == "__main__":
+                     os.path.join(cwd, '..', 'nanovdb'),
+                     os.path.join(cwd, 'external/cutlass/include'),
+                     os.path.join(cwd, 'external/c-blosc/install/include'),
+-                    os.path.join(cwd, 'external/cudnn_fe/include')] + cudnn_include_dirs,
++                    os.path.join(cwd, 'external/cudnn_fe/include')] + cudnn_include_dirs + cuda_include_dirs_extra,
+         extra_objects=['external/c-blosc/install/lib/libblosc.a'] + cudnn_static_libs,
+         extra_compile_args={'cxx': cpp_flags + ['-fvisibility=default'],
+                             'nvcc': nvcc_flags},
+@@ -272,7 +301,7 @@ if __name__ == "__main__":
+         include_dirs=[os.path.join(cwd, 'src'),
+                     os.path.join(cwd, '..', 'nanovdb'),
+                     os.path.join(cwd, 'external/cutlass/include'),
+-                    os.path.join(cwd, 'external/c-blosc/install/include')],
++                    os.path.join(cwd, 'external/c-blosc/install/include')] + cuda_include_dirs_extra,
+         library_dirs=[os.path.join(cwd, 'fvdb')],
+         libraries=['fvdb'],
+         extra_link_args=['-Wl,-rpath,$ORIGIN'],
+diff --git a/fvdb/src/python/TypeCasters.h b/fvdb/src/python/TypeCasters.h
+index a8d37bb3..69f3d3b9 100644
+--- a/fvdb/src/python/TypeCasters.h
++++ b/fvdb/src/python/TypeCasters.h
+@@ -35,29 +35,6 @@ public:
+ };
+ 
+ 
+-template <> struct type_caster<torch::ScalarType> : public type_caster_base<torch::ScalarType> {
+-    using base = type_caster_base<torch::ScalarType>;
+-public:
+-    torch::ScalarType st_value;
+-
+-    bool load(handle src, bool convert) {
+-        if (THPDtype_Check(src.ptr())) {
+-            st_value = reinterpret_cast<THPDtype*>(src.ptr())->scalar_type;
+-            value = &st_value;
+-            return true;
+-        } else {
+-            return base::load(src, convert);
+-        }
+-    }
+-
+-    static handle cast(const at::ScalarType& src, return_value_policy policy, handle parent) {
+-        auto result = TORCH_MODULE.attr(fvdb::detail::TorchScalarTypeToStr(src).c_str());
+-        Py_INCREF(result.ptr());
+-        return result;
+-    }
+-};
+-
+-
+ template <> struct type_caster<fvdb::TorchDeviceOrString> : public type_caster_base<fvdb::TorchDeviceOrString> {
+     using base = type_caster_base<fvdb::TorchDeviceOrString>;
+ public:

@@ -4,7 +4,7 @@ import numpy as np
 import torch
 from ascending_cache import take_prefix,take_requests,FIELDS
 from dense_math import interpolate_pose
-from gaussian_renderer.raster_batch import NeuralGaussianBatch,BundleMetadata
+from batch import NeuralGaussianBatch,BundleMetadata
 
 
 def epoch_spec(start,k,total,centered):

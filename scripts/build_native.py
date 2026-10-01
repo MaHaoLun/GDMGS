@@ -42,7 +42,7 @@ if __name__ == '__main__':
         sys.path.insert(0, str(ROOT))
         from system.bootstrap import configure
         configure()
-        from gdmgs.anchor_frustum.gpu_construction import native
+        from anchor_frustum.gpu_construction import native
         from fused_filter import native as holes
         from staged_isect import load_extension
         native(); holes(); load_extension()

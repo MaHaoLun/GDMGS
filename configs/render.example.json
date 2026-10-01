@@ -1,5 +1,5 @@
 {
-  "model_path": "/path/to/original_proxygs_checkpoint_run",
+  "model_path": "/path/to/original_cachegs_checkpoint_run",
   "source_path": "/path/to/scene_dataset",
   "occluder_cells": "/path/to/scene_cells.npz",
   "iteration": 40000,
@@ -14,5 +14,6 @@
   "cpu_threads": 1,
   "selection_device": "gpu",
   "occlusion": true,
-  "save_images": true
+  "save_images": true,
+  "model_backend": "cachegs"
 }

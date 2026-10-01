@@ -11,11 +11,11 @@ import numpy as np
 import torch
 from cache_build_optim import build_union_plan, PlannedArena
 from epoch_cache import epoch_spec, source_view
-from fullblock_timed import prepare_decode, finish_decode, Admission
+from fullblock_timed import Admission
+from model_bridge import prepare_decode, finish_decode, decode_batch, source_state
 from priority_renderer import PriorityRenderer
 from ascending_cache import take_requests
-from render_step7b_fidelity import decode_batch
-from gaussian_renderer.gdmgs_gsplat_backend import render_gdmgs_backend
+from raster_backend import render_gdmgs_backend
 from data import load
 from selection_runtime import Selection
 from planning import allocate
@@ -53,7 +53,7 @@ class Lane:
                 plan = build_union_plan(requests)
                 source = source_view(self.e, spec)
                 m = self.e.rt.model
-                m.set_anchor_mask(source.camera_center, 40000, source.resolution_scale)
+                source_state(source, m, getattr(m, '_gdmgs_iteration', 40000))
                 state = prepare_decode(source, m, plan.ordered) if len(plan.ordered) else None
                 rows = state['rows'] if state is not None else 0
                 pool.acquire(index, rows)

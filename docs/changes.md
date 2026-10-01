@@ -16,3 +16,16 @@ The original commit remains in Git history. It is superseded by:
 These integration/correctness changes intentionally invalidate inherited
 performance or image-quality claims. Source completeness and runtime acceptance
 are recorded separately in `validation.md`.
+
+## Training/model source correction
+
+The default is now the remotely verified CacheGS/GDMGS_Codebase source, not
+ProxyGS training. Root training and model configuration select CacheGS by
+default, with explicit compatibility for the later experimental checkpoints.
+The adapter preserves CacheGS scale/rotation rounding, original row ownership,
+and anchor-based LoD positions. Source-pose preparation does not mutate shared
+fVDB attributes. The original fresh entrypoint remains separately runnable.
+
+The server's actual fVDB build commit and patch were recorded. Reviewed query,
+sharing and worker-48 scheduling source snapshots are retained for traceability.
+The user-requested query/schedule distinction remains deferred.

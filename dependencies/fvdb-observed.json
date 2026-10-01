@@ -1,0 +1,16 @@
+{
+  "package": "fvdb",
+  "version": "0.0.1",
+  "observed_module": "/home/zyl/.local/lib/python3.10/site-packages/fvdb/__init__.py",
+  "build_source": "/home/zyl/XCube/openvdb/fvdb",
+  "git_commit": "7c04e6dc75c9d2aba49a3fa31495efab31c62879",
+  "modified_tracked_files": [
+    "fvdb/setup.py",
+    "fvdb/src/python/TypeCasters.h"
+  ],
+  "patch": "fvdb-local.patch",
+  "python": "3.10.14",
+  "torch": "2.4.0+cu124",
+  "gsplat": "1.4.0+pt24cu124",
+  "portability": "Do not replace with an arbitrary package bearing the same version; this is an observed local build, not a fresh-install validation."
+}

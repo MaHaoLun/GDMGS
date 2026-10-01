@@ -2,6 +2,1297 @@
   "source_root": "VISTA workspace",
   "files": [
     {
+      "file": "research/retained/experiment_correction_20260930/fullblock_timed.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/experiment_correction_20260930/fullblock_timed.py",
+      "bytes": 14400,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/base/joint.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/base/joint.py",
+      "bytes": 5434,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/base/native/bindings.cpp",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/base/native/bindings.cpp",
+      "bytes": 369,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/base/native/bounds.h",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/base/native/bounds.h",
+      "bytes": 1949,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/base/native/query.cu",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/base/native/query.cu",
+      "bytes": 5856,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/base/native/radix_build.cu",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/base/native/radix_build.cu",
+      "bytes": 5831,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/base/native/triangle_predicate.cuh",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/base/native/triangle_predicate.cuh",
+      "bytes": 1508,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/base/native/warp_classify.cuh",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/base/native/warp_classify.cuh",
+      "bytes": 2016,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/benchmark.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/benchmark.py",
+      "bytes": 15789,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/bindings.cpp",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/bindings.cpp",
+      "bytes": 393,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/bounds.h",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/bounds.h",
+      "bytes": 1949,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/dfs_impl.cuh",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/dfs_impl.cuh",
+      "bytes": 13212,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/hybrid.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/hybrid.py",
+      "bytes": 4709,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/incremental_depth.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/incremental_depth.py",
+      "bytes": 435,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/online_proxy_depth.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/online_proxy_depth.py",
+      "bytes": 8462,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/optimized_selector.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/optimized_selector.py",
+      "bytes": 1004,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/query.cu",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/query.cu",
+      "bytes": 3283,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/range_reference.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/range_reference.py",
+      "bytes": 302,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/recommended_selector.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/recommended_selector.py",
+      "bytes": 1182,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/review.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/review.py",
+      "bytes": 11676,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/serial_reference.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/serial_reference.py",
+      "bytes": 295,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/test_hybrid.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/test_hybrid.py",
+      "bytes": 6743,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/test_incremental.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/test_incremental.py",
+      "bytes": 3129,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/triangle_predicate.cuh",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/triangle_predicate.cuh",
+      "bytes": 1508,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/warp_classify.cuh",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_query_table_20261001/vendor/occlusion_dfs/parallel_output_v7/dev/warp_classify.cuh",
+      "bytes": 2016,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_schedule_worker48_controlled_20261001/DESIGN.json",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_schedule_worker48_controlled_20261001/DESIGN.json",
+      "bytes": 3822,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_schedule_worker48_controlled_20261001/DESIGN_IMPLEMENTATION_REVIEW.json",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_schedule_worker48_controlled_20261001/DESIGN_IMPLEMENTATION_REVIEW.json",
+      "bytes": 5113,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_schedule_worker48_controlled_20261001/audit_final.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_schedule_worker48_controlled_20261001/audit_final.py",
+      "bytes": 7177,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_schedule_worker48_controlled_20261001/final_runner.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_schedule_worker48_controlled_20261001/final_runner.py",
+      "bytes": 17561,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_schedule_worker48_controlled_20261001/resources.json",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_schedule_worker48_controlled_20261001/resources.json",
+      "bytes": 2071,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_schedule_worker48_controlled_20261001/selection.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_schedule_worker48_controlled_20261001/selection.py",
+      "bytes": 9249,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/joint_schedule_worker48_controlled_20261001/selection_generalized.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/joint_schedule_worker48_controlled_20261001/selection_generalized.py",
+      "bytes": 6900,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/proxygs_step7d_factor_cache_20260925/centered_k/cache_build_optim.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/proxygs_step7d_factor_cache_20260925/centered_k/cache_build_optim.py",
+      "bytes": 9179,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/proxygs_step7d_factor_cache_20260925/centered_k/epoch_cache.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/proxygs_step7d_factor_cache_20260925/centered_k/epoch_cache.py",
+      "bytes": 3987,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "research/retained/proxygs_step7d_factor_cache_20260925/centered_k/priority_renderer.py",
+      "source": "zxcpu2:/ssddata/lun/gdmgs_artifacts/proxygs_step7d_factor_cache_20260925/centered_k/priority_renderer.py",
+      "bytes": 7119,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/LICENSE.md",
+      "source": null,
+      "bytes": 4275,
+      "change": "new integration; see docs/method.md"
+    },
+    {
+      "file": "system/anchor_frustum/__init__.py",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/__init__.py",
+      "bytes": 8481,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/gpu_construct_native/bindings.cpp",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/gpu_construct_native/bindings.cpp",
+      "bytes": 901,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/gpu_construct_native/octree.cu",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/gpu_construct_native/octree.cu",
+      "bytes": 8255,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/gpu_construct_native/radix_build.cu",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/gpu_construct_native/radix_build.cu",
+      "bytes": 5831,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/gpu_construct_native/radix_query.cu",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/gpu_construct_native/radix_query.cu",
+      "bytes": 5334,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/gpu_construction.py",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/gpu_construction.py",
+      "bytes": 6012,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/hierarchy.py",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/hierarchy.py",
+      "bytes": 2954,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/hierarchy_native_serial/bindings.cpp",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/hierarchy_native_serial/bindings.cpp",
+      "bytes": 898,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/hierarchy_native_serial/classify.h",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/hierarchy_native_serial/classify.h",
+      "bytes": 2138,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/hierarchy_native_serial/frontier.cu",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/hierarchy_native_serial/frontier.cu",
+      "bytes": 3787,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/hierarchy_native_warp/bindings.cpp",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/hierarchy_native_warp/bindings.cpp",
+      "bytes": 898,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/hierarchy_native_warp/classify.h",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/hierarchy_native_warp/classify.h",
+      "bytes": 2138,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/hierarchy_native_warp/frontier.cu",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/hierarchy_native_warp/frontier.cu",
+      "bytes": 5092,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/hierarchy_native_warp/warp_classify.cuh",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/hierarchy_native_warp/warp_classify.cuh",
+      "bytes": 2016,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/native/bindings.cpp",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/native/bindings.cpp",
+      "bytes": 3274,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/native/bounds.h",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/native/bounds.h",
+      "bytes": 1949,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/native/query.cu",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/native/query.cu",
+      "bytes": 5052,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/pipeline.py",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/pipeline.py",
+      "bytes": 2038,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/anchor_frustum/sah_tree.py",
+      "source": "upstream/ProxyGS/gdmgs/anchor_frustum/sah_tree.py",
+      "bytes": 2846,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/ascending_cache.py",
+      "source": "output/proxygs_step7d_ascending_dense_20260925/ascending_cache.py",
+      "bytes": 14383,
+      "byte_equal_to_source": false,
+      "change": "explicit model-family imports or precision/LoD adapter; original source retained separately"
+    },
+    {
+      "file": "system/batch.py",
+      "source": "upstream/ProxyGS/gaussian_renderer/raster_batch.py",
+      "bytes": 9724,
+      "byte_equal_to_source": true,
+      "change": "package-local transport import; model semantics selected explicitly"
+    },
+    {
+      "file": "system/bootstrap.py",
+      "source": null,
+      "bytes": 1508,
+      "change": "new integration; see docs/method.md"
+    },
+    {
+      "file": "system/cache_build_optim.py",
+      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/cache_build_optim.py",
+      "bytes": 9149,
+      "byte_equal_to_source": false,
+      "change": "explicit model-family imports or precision/LoD adapter; original source retained separately"
+    },
+    {
+      "file": "system/camera_domain.py",
+      "source": null,
+      "change": "model-family integration; see source_audit.json",
+      "bytes": 674
+    },
+    {
+      "file": "system/cpu_select.cpp",
+      "source": "output/experiment_correction_20260930/cpu_select.cpp",
+      "bytes": 13237,
+      "byte_equal_to_source": false
+    },
+    {
+      "file": "system/cpu_selector.py",
+      "source": "output/experiment_correction_20260930/cpu_selector.py",
+      "bytes": 11119,
+      "byte_equal_to_source": false,
+      "change": "explicit model-family imports or precision/LoD adapter; original source retained separately"
+    },
+    {
+      "file": "system/data.py",
+      "source": null,
+      "bytes": 5498,
+      "change": "new integration; see docs/method.md"
+    },
+    {
+      "file": "system/dense_math.py",
+      "source": "output/proxygs_step7d_dense_trajectory_20260924/dense_math.py",
+      "bytes": 2485,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/epoch_cache.py",
+      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/epoch_cache.py",
+      "bytes": 3962,
+      "byte_equal_to_source": false,
+      "change": "explicit model-family imports or precision/LoD adapter; original source retained separately"
+    },
+    {
+      "file": "system/epoch_pipeline.py",
+      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/epoch_pipeline.py",
+      "bytes": 15577,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/fast_geometry.py",
+      "source": "output/occluder_fill_20260929/fast_geometry.py",
+      "bytes": 1950,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/full_bundle_cache.py",
+      "source": "upstream/ProxyGS/gdmgs/cache/full_bundle_cache.py",
+      "bytes": 27722,
+      "byte_equal_to_source": false,
+      "change": "package-local transport import; model semantics selected explicitly"
+    },
+    {
+      "file": "system/full_system.py",
+      "source": null,
+      "bytes": 13257,
+      "change": "new integration; see docs/method.md"
+    },
+    {
+      "file": "system/fullblock_timed.py",
+      "source": "output/experiment_correction_20260930/fullblock_timed.py",
+      "bytes": 14400,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/fused_filter.py",
+      "source": "output/occluder_fill_20260929/fused_filter.py",
+      "bytes": 1047,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/gpu_occluders.py",
+      "source": null,
+      "bytes": 4965,
+      "change": "new integration; see docs/method.md"
+    },
+    {
+      "file": "system/hole_filter.cu",
+      "source": "output/occluder_fill_20260929/hole_filter.cu",
+      "bytes": 4325,
+      "byte_equal_to_source": false
+    },
+    {
+      "file": "system/hole_geometry.py",
+      "source": "output/mesh_pruned_anchor_20260929/hole_geometry.py",
+      "bytes": 3910,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/hole_planes_native.cpp",
+      "source": "output/experiment_correction_20260930/hole_planes_native.cpp",
+      "bytes": 3952,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/holed_index.py",
+      "source": "output/mesh_pruned_anchor_20260929/holed_index.py",
+      "bytes": 4893,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/model_bridge.py",
+      "source": null,
+      "change": "model-family integration; see source_audit.json",
+      "bytes": 3779
+    },
+    {
+      "file": "system/occupancy.py",
+      "source": "output/mesh_pruned_anchor_20260929/occupancy_probe.py",
+      "bytes": 4342,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/parallel_renderer.py",
+      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/parallel_renderer.py",
+      "bytes": 9174,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/planning.py",
+      "source": null,
+      "bytes": 477,
+      "change": "new integration; see docs/method.md"
+    },
+    {
+      "file": "system/priority_renderer.py",
+      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/priority_renderer.py",
+      "bytes": 7119,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/raster_backend.py",
+      "source": "upstream/ProxyGS/gaussian_renderer/gdmgs_gsplat_backend.py",
+      "bytes": 8310,
+      "byte_equal_to_source": false,
+      "change": "package-local transport import; model semantics selected explicitly"
+    },
+    {
+      "file": "system/selection_runtime.py",
+      "source": null,
+      "bytes": 5161,
+      "change": "new integration; see docs/method.md"
+    },
+    {
+      "file": "system/staged_isect.py",
+      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/staged_isect.py",
+      "bytes": 2779,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/staged_isect_src/LICENSE",
+      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/staged_isect_src/LICENSE",
+      "bytes": 11357,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/staged_isect_src/binding.cpp",
+      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/staged_isect_src/binding.cpp",
+      "bytes": 559,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/staged_isect_src/isect_tiles.original.cu",
+      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/staged_isect_src/isect_tiles.original.cu",
+      "bytes": 14122,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/staged_isect_src/provenance.json",
+      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/staged_isect_src/provenance.json",
+      "bytes": 1966,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "system/staged_isect_src/staged_isect.cu",
+      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/staged_isect_src/staged_isect.cu",
+      "bytes": 11605,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/.gitignore",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/.gitignore",
+      "bytes": 125,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/AGENTS.md",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/AGENTS.md",
+      "bytes": 4174,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/LICENSE.md",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/LICENSE.md",
+      "bytes": 4275,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/README.md",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/README.md",
+      "bytes": 1737,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/cache/rendering_cache_optimized.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/cache/rendering_cache_optimized.py",
+      "bytes": 20282,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/config/3dgs/base_model.yaml",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/config/3dgs/base_model.yaml",
+      "bytes": 1657,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/config/3dgs/lod_bungee.yaml",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/config/3dgs/lod_bungee.yaml",
+      "bytes": 1853,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/config/bungee/lod_amsterdam.yaml",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/config/bungee/lod_amsterdam.yaml",
+      "bytes": 2615,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/config/bungee/lod_barcelona.yaml",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/config/bungee/lod_barcelona.yaml",
+      "bytes": 2615,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/config/bungee/lod_bilbao.yaml",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/config/bungee/lod_bilbao.yaml",
+      "bytes": 2609,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/config/bungee/lod_chicago.yaml",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/config/bungee/lod_chicago.yaml",
+      "bytes": 2611,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/config/bungee/lod_hollywood.yaml",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/config/bungee/lod_hollywood.yaml",
+      "bytes": 2615,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/config/bungee/lod_pompidou.yaml",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/config/bungee/lod_pompidou.yaml",
+      "bytes": 2613,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/config/bungee/lod_quebec.yaml",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/config/bungee/lod_quebec.yaml",
+      "bytes": 2609,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/config/bungee/lod_rome.yaml",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/config/bungee/lod_rome.yaml",
+      "bytes": 2604,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/config/scaffoldgs/base_model.yaml",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/config/scaffoldgs/base_model.yaml",
+      "bytes": 2585,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/config/scaffoldgs/base_model1.yaml",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/config/scaffoldgs/base_model1.yaml",
+      "bytes": 2577,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/config/scaffoldgs/lod_bungee.yaml",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/config/scaffoldgs/lod_bungee.yaml",
+      "bytes": 2604,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/config/scaffoldgs/lod_model.yaml",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/config/scaffoldgs/lod_model.yaml",
+      "bytes": 2772,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/config/scaffoldgs/lod_model_dense_fixed.yaml",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/config/scaffoldgs/lod_model_dense_fixed.yaml",
+      "bytes": 2727,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/convert.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/convert.py",
+      "bytes": 5349,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/docs/cleanup.md",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/docs/cleanup.md",
+      "bytes": 2439,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/docs/gdmgs_ab_usage.md",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/docs/gdmgs_ab_usage.md",
+      "bytes": 3942,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/docs/index_validation_protocol.md",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/docs/index_validation_protocol.md",
+      "bytes": 13712,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/docs/mesh_method.md",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/docs/mesh_method.md",
+      "bytes": 9566,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/docs/paper.latex",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/docs/paper.latex",
+      "bytes": 69259,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/docs/validation.md",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/docs/validation.md",
+      "bytes": 5850,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/environment.yml",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/environment.yml",
+      "bytes": 4946,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/exp/exp.md",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/exp/exp.md",
+      "bytes": 6173,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gaussian_renderer/__init__.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gaussian_renderer/__init__.py",
+      "bytes": 56,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gaussian_renderer/fvdb_native_renderer.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gaussian_renderer/fvdb_native_renderer.py",
+      "bytes": 8437,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gaussian_renderer/network_gui.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gaussian_renderer/network_gui.py",
+      "bytes": 2645,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gaussian_renderer/neural_gaussians.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gaussian_renderer/neural_gaussians.py",
+      "bytes": 11492,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gaussian_renderer/render.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gaussian_renderer/render.py",
+      "bytes": 43035,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gaussian_renderer/visibility.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gaussian_renderer/visibility.py",
+      "bytes": 8102,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/__init__.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/__init__.py",
+      "bytes": 85,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/adapters.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/adapters.py",
+      "bytes": 5329,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/geometry/__init__.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/geometry/__init__.py",
+      "bytes": 363,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/geometry/depth_mesh.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/geometry/depth_mesh.py",
+      "bytes": 13675,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/geometry/pixel_consistency.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/geometry/pixel_consistency.py",
+      "bytes": 8317,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/index_pipeline.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/index_pipeline.py",
+      "bytes": 12477,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/mesh_index/README.md",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/mesh_index/README.md",
+      "bytes": 6815,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/mesh_index/__init__.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/mesh_index/__init__.py",
+      "bytes": 193,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/mesh_index/gpu_index.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/mesh_index/gpu_index.py",
+      "bytes": 9739,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/mesh_index/index.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/mesh_index/index.py",
+      "bytes": 9076,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/mesh_index/native/CMakeLists.txt",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/mesh_index/native/CMakeLists.txt",
+      "bytes": 1632,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/mesh_index/native/gpu_query.cu",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/mesh_index/native/gpu_query.cu",
+      "bytes": 6954,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/mesh_index/native/mesh_native.cpp",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/mesh_index/native/mesh_native.cpp",
+      "bytes": 27384,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/pipeline.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/pipeline.py",
+      "bytes": 1517,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/query/depth_pyramid.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/query/depth_pyramid.py",
+      "bytes": 22624,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/query/ori.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/query/ori.py",
+      "bytes": 2983,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/query/range_state.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/query/range_state.py",
+      "bytes": 2179,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/runtime/__init__.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/runtime/__init__.py",
+      "bytes": 63,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/runtime/camera_key.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/runtime/camera_key.py",
+      "bytes": 2947,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/runtime/finalized_scene.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/runtime/finalized_scene.py",
+      "bytes": 7706,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/runtime/session.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/runtime/session.py",
+      "bytes": 649,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/unified_index/README.md",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/unified_index/README.md",
+      "bytes": 14670,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/unified_index/__init__.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/unified_index/__init__.py",
+      "bytes": 541,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/unified_index/anchor_index.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/unified_index/anchor_index.py",
+      "bytes": 17232,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/unified_index/cuda/anchor_cuda.cu",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/unified_index/cuda/anchor_cuda.cu",
+      "bytes": 14010,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/unified_index/cuda/benchmark_snapshot.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/unified_index/cuda/benchmark_snapshot.py",
+      "bytes": 3808,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/unified_index/cuda/bindings.cpp",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/unified_index/cuda/bindings.cpp",
+      "bytes": 1113,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/unified_index/cuda/build.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/unified_index/cuda/build.py",
+      "bytes": 928,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/unified_index/gpu_index.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/unified_index/gpu_index.py",
+      "bytes": 13086,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/unified_index/native/anchor_native.cpp",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/unified_index/native/anchor_native.cpp",
+      "bytes": 25210,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/unified_index/native/benchmark_snapshot.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/unified_index/native/benchmark_snapshot.py",
+      "bytes": 3668,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/gdmgs/unified_index/native/build.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/gdmgs/unified_index/native/build.py",
+      "bytes": 1389,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/lpipsPyTorch/__init__.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/lpipsPyTorch/__init__.py",
+      "bytes": 635,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/lpipsPyTorch/modules/lpips.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/lpipsPyTorch/modules/lpips.py",
+      "bytes": 1151,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/lpipsPyTorch/modules/networks.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/lpipsPyTorch/modules/networks.py",
+      "bytes": 2692,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/lpipsPyTorch/modules/utils.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/lpipsPyTorch/modules/utils.py",
+      "bytes": 885,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/metrics.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/metrics.py",
+      "bytes": 8090,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/precompute_cache.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/precompute_cache.py",
+      "bytes": 6035,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/pytest.ini",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/pytest.ini",
+      "bytes": 156,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/render.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/render.py",
+      "bytes": 3098,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/render2.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/render2.py",
+      "bytes": 3045,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/req.txt",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/req.txt",
+      "bytes": 347,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/scene/__init__.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/scene/__init__.py",
+      "bytes": 5509,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/scene/basic_model.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/scene/basic_model.py",
+      "bytes": 9534,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/scene/cameras.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/scene/cameras.py",
+      "bytes": 2457,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/scene/colmap_loader.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/scene/colmap_loader.py",
+      "bytes": 11859,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/scene/dataset_readers.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/scene/dataset_readers.py",
+      "bytes": 17648,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/scene/embedding.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/scene/embedding.py",
+      "bytes": 2366,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/scene/gs_model_scaffoldgs/__init__.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/scene/gs_model_scaffoldgs/__init__.py",
+      "bytes": 127,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/scene/gs_model_scaffoldgs/base_model.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/scene/gs_model_scaffoldgs/base_model.py",
+      "bytes": 30269,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/scene/gs_model_scaffoldgs/lod_model.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/scene/gs_model_scaffoldgs/lod_model.py",
+      "bytes": 79948,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/sh/download_matrixcity.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/sh/download_matrixcity.py",
+      "bytes": 1706,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/sh/run_exp.sh",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/sh/run_exp.sh",
+      "bytes": 8674,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tests/compatibility/test_cli_workflow.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tests/compatibility/test_cli_workflow.py",
+      "bytes": 16927,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tests/compatibility/test_training_fixture.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tests/compatibility/test_training_fixture.py",
+      "bytes": 1353,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tests/gdmgs/test_anchor_index.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tests/gdmgs/test_anchor_index.py",
+      "bytes": 16736,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tests/gdmgs/test_bundle_raster.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tests/gdmgs/test_bundle_raster.py",
+      "bytes": 15586,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tests/gdmgs/test_depth_pyramid.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tests/gdmgs/test_depth_pyramid.py",
+      "bytes": 1979,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tests/gdmgs/test_geometry.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tests/gdmgs/test_geometry.py",
+      "bytes": 11640,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tests/gdmgs/test_gpu_anchor_index.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tests/gdmgs/test_gpu_anchor_index.py",
+      "bytes": 8013,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tests/gdmgs/test_gpu_mesh_index.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tests/gdmgs/test_gpu_mesh_index.py",
+      "bytes": 6883,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tests/gdmgs/test_index_oracles.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tests/gdmgs/test_index_oracles.py",
+      "bytes": 41092,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tests/gdmgs/test_index_pipeline.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tests/gdmgs/test_index_pipeline.py",
+      "bytes": 7140,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tests/gdmgs/test_live_integration.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tests/gdmgs/test_live_integration.py",
+      "bytes": 2328,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tests/gdmgs/test_mesh_index.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tests/gdmgs/test_mesh_index.py",
+      "bytes": 7301,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tests/gdmgs/test_pixel_depth_oracles.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tests/gdmgs/test_pixel_depth_oracles.py",
+      "bytes": 12576,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tests/gdmgs/test_pose_selection.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tests/gdmgs/test_pose_selection.py",
+      "bytes": 19162,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tests/gdmgs/test_runtime_contracts.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tests/gdmgs/test_runtime_contracts.py",
+      "bytes": 19027,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tools/gdmgs/audit_index_results.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tools/gdmgs/audit_index_results.py",
+      "bytes": 42739,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tools/gdmgs/benchmark_index.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tools/gdmgs/benchmark_index.py",
+      "bytes": 23407,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tools/gdmgs/build_mesh.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tools/gdmgs/build_mesh.py",
+      "bytes": 37093,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tools/gdmgs/run_index_setting.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tools/gdmgs/run_index_setting.py",
+      "bytes": 10906,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tools/gdmgs/survey_inputs.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tools/gdmgs/survey_inputs.py",
+      "bytes": 11928,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tools/gdmgs/validate_ab.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tools/gdmgs/validate_ab.py",
+      "bytes": 20471,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/tools/gdmgs/with_index_runtime.sh",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/tools/gdmgs/with_index_runtime.sh",
+      "bytes": 984,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/train.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/train.py",
+      "bytes": 25346,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/train_bungeenerf_seq.sh",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/train_bungeenerf_seq.sh",
+      "bytes": 2021,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/utils/camera_utils.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/utils/camera_utils.py",
+      "bytes": 3546,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/utils/fvdb_conversion.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/utils/fvdb_conversion.py",
+      "bytes": 1480,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/utils/fvdb_grid_attributes.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/utils/fvdb_grid_attributes.py",
+      "bytes": 7689,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/utils/fvdb_visibility.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/utils/fvdb_visibility.py",
+      "bytes": 17446,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/utils/general_utils.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/utils/general_utils.py",
+      "bytes": 4897,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/utils/graphics_utils.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/utils/graphics_utils.py",
+      "bytes": 2052,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/utils/image_utils.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/utils/image_utils.py",
+      "bytes": 554,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/utils/loss_utils.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/utils/loss_utils.py",
+      "bytes": 2191,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/utils/render_workflow.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/utils/render_workflow.py",
+      "bytes": 9994,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/utils/runtime_options.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/utils/runtime_options.py",
+      "bytes": 3520,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/utils/sh_utils.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/utils/sh_utils.py",
+      "bytes": 4371,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/utils/system_utils.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/utils/system_utils.py",
+      "bytes": 785,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/CacheGS/utils/visualize_utils.py",
+      "source": "zxcpu2:/home/zyl/lun/GDMGS_Codebase/utils/visualize_utils.py",
+      "bytes": 4337,
+      "byte_equal_to_source": true
+    },
+    {
       "file": "upstream/ProxyGS/.gitignore",
       "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/.gitignore",
       "bytes": 92,
@@ -5198,6 +6489,12 @@
       "byte_equal_to_source": true
     },
     {
+      "file": "upstream/ProxyGS/ProxyGS-Vulkan-Cuda-Interop/nv_repo/nvpro_core2/third_party/glm/glm/ext.hpp",
+      "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/ProxyGS-Vulkan-Cuda-Interop/nv_repo/nvpro_core2/third_party/glm/glm/ext.hpp",
+      "bytes": 8883,
+      "byte_equal_to_source": true
+    },
+    {
       "file": "upstream/ProxyGS/ProxyGS-Vulkan-Cuda-Interop/nv_repo/nvpro_core2/third_party/glm/glm/ext/_matrix_vectorize.hpp",
       "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/ProxyGS-Vulkan-Cuda-Interop/nv_repo/nvpro_core2/third_party/glm/glm/ext/_matrix_vectorize.hpp",
       "bytes": 4551,
@@ -6215,12 +7512,6 @@
       "file": "upstream/ProxyGS/ProxyGS-Vulkan-Cuda-Interop/nv_repo/nvpro_core2/third_party/glm/glm/ext/vector_ulp.inl",
       "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/ProxyGS-Vulkan-Cuda-Interop/nv_repo/nvpro_core2/third_party/glm/glm/ext/vector_ulp.inl",
       "bytes": 2218,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "upstream/ProxyGS/ProxyGS-Vulkan-Cuda-Interop/nv_repo/nvpro_core2/third_party/glm/glm/ext.hpp",
-      "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/ProxyGS-Vulkan-Cuda-Interop/nv_repo/nvpro_core2/third_party/glm/glm/ext.hpp",
-      "bytes": 8883,
       "byte_equal_to_source": true
     },
     {
@@ -16370,6 +17661,12 @@
       "byte_equal_to_source": true
     },
     {
+      "file": "upstream/ProxyGS/submodules/diff-gaussian-rasterization/third_party/glm/doc/manual.pdf",
+      "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/submodules/diff-gaussian-rasterization/third_party/glm/doc/manual.pdf",
+      "bytes": 1466032,
+      "byte_equal_to_source": true
+    },
+    {
       "file": "upstream/ProxyGS/submodules/diff-gaussian-rasterization/third_party/glm/doc/manual/frontpage1.png",
       "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/submodules/diff-gaussian-rasterization/third_party/glm/doc/manual/frontpage1.png",
       "bytes": 731902,
@@ -16535,12 +17832,6 @@
       "file": "upstream/ProxyGS/submodules/diff-gaussian-rasterization/third_party/glm/doc/manual/references-outerra4.jpg",
       "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/submodules/diff-gaussian-rasterization/third_party/glm/doc/manual/references-outerra4.jpg",
       "bytes": 5427,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "upstream/ProxyGS/submodules/diff-gaussian-rasterization/third_party/glm/doc/manual.pdf",
-      "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/submodules/diff-gaussian-rasterization/third_party/glm/doc/manual.pdf",
-      "bytes": 1466032,
       "byte_equal_to_source": true
     },
     {
@@ -17039,6 +18330,12 @@
       "file": "upstream/ProxyGS/submodules/diff-gaussian-rasterization/third_party/glm/glm/exponential.hpp",
       "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/submodules/diff-gaussian-rasterization/third_party/glm/glm/exponential.hpp",
       "bytes": 5615,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/ProxyGS/submodules/diff-gaussian-rasterization/third_party/glm/glm/ext.hpp",
+      "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/submodules/diff-gaussian-rasterization/third_party/glm/glm/ext.hpp",
+      "bytes": 8592,
       "byte_equal_to_source": true
     },
     {
@@ -18059,12 +19356,6 @@
       "file": "upstream/ProxyGS/submodules/diff-gaussian-rasterization/third_party/glm/glm/ext/vector_ulp.inl",
       "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/submodules/diff-gaussian-rasterization/third_party/glm/glm/ext/vector_ulp.inl",
       "bytes": 2194,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "upstream/ProxyGS/submodules/diff-gaussian-rasterization/third_party/glm/glm/ext.hpp",
-      "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/submodules/diff-gaussian-rasterization/third_party/glm/glm/ext.hpp",
-      "bytes": 8592,
       "byte_equal_to_source": true
     },
     {
@@ -20570,12 +21861,6 @@
       "byte_equal_to_source": true
     },
     {
-      "file": "upstream/ProxyGS/submodules/simple-knn/simple_knn/.gitkeep",
-      "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/submodules/simple-knn/simple_knn/.gitkeep",
-      "bytes": 0,
-      "byte_equal_to_source": true
-    },
-    {
       "file": "upstream/ProxyGS/submodules/simple-knn/simple_knn.cu",
       "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/submodules/simple-knn/simple_knn.cu",
       "bytes": 6352,
@@ -20585,6 +21870,12 @@
       "file": "upstream/ProxyGS/submodules/simple-knn/simple_knn.h",
       "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/submodules/simple-knn/simple_knn.h",
       "bytes": 451,
+      "byte_equal_to_source": true
+    },
+    {
+      "file": "upstream/ProxyGS/submodules/simple-knn/simple_knn/.gitkeep",
+      "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/submodules/simple-knn/simple_knn/.gitkeep",
+      "bytes": 0,
       "byte_equal_to_source": true
     },
     {
@@ -21126,191 +22417,11 @@
       "source": "output/proxygs_step7d_sliding_pairparity_20260924/runtime/Proxy-GS-eac937e8/utils/visualize_utils.py",
       "bytes": 4337,
       "byte_equal_to_source": true
-    },
-    {
-      "file": "system/cache_build_optim.py",
-      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/cache_build_optim.py",
-      "bytes": 9179,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/epoch_cache.py",
-      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/epoch_cache.py",
-      "bytes": 3987,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/epoch_pipeline.py",
-      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/epoch_pipeline.py",
-      "bytes": 15577,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/priority_renderer.py",
-      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/priority_renderer.py",
-      "bytes": 7119,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/parallel_renderer.py",
-      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/parallel_renderer.py",
-      "bytes": 9174,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/staged_isect.py",
-      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/staged_isect.py",
-      "bytes": 2779,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/ascending_cache.py",
-      "source": "output/proxygs_step7d_ascending_dense_20260925/ascending_cache.py",
-      "bytes": 14432,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/dense_math.py",
-      "source": "output/proxygs_step7d_dense_trajectory_20260924/dense_math.py",
-      "bytes": 2485,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/fullblock_timed.py",
-      "source": "output/experiment_correction_20260930/fullblock_timed.py",
-      "bytes": 14400,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/cpu_selector.py",
-      "source": "output/experiment_correction_20260930/cpu_selector.py",
-      "bytes": 11125,
-      "byte_equal_to_source": false
-    },
-    {
-      "file": "system/cpu_select.cpp",
-      "source": "output/experiment_correction_20260930/cpu_select.cpp",
-      "bytes": 13237,
-      "byte_equal_to_source": false
-    },
-    {
-      "file": "system/hole_planes_native.cpp",
-      "source": "output/experiment_correction_20260930/hole_planes_native.cpp",
-      "bytes": 3952,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/fast_geometry.py",
-      "source": "output/occluder_fill_20260929/fast_geometry.py",
-      "bytes": 1950,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/hole_filter.cu",
-      "source": "output/occluder_fill_20260929/hole_filter.cu",
-      "bytes": 4325,
-      "byte_equal_to_source": false
-    },
-    {
-      "file": "system/fused_filter.py",
-      "source": "output/occluder_fill_20260929/fused_filter.py",
-      "bytes": 1047,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/staged_isect_src/LICENSE",
-      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/staged_isect_src/LICENSE",
-      "bytes": 11357,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/staged_isect_src/binding.cpp",
-      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/staged_isect_src/binding.cpp",
-      "bytes": 559,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/staged_isect_src/isect_tiles.original.cu",
-      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/staged_isect_src/isect_tiles.original.cu",
-      "bytes": 14122,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/staged_isect_src/provenance.json",
-      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/staged_isect_src/provenance.json",
-      "bytes": 1966,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/staged_isect_src/staged_isect.cu",
-      "source": "output/proxygs_step7d_factor_cache_20260925/centered_k/staged_isect_src/staged_isect.cu",
-      "bytes": 11605,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/occupancy.py",
-      "source": "output/mesh_pruned_anchor_20260929/occupancy_probe.py",
-      "bytes": 4342,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/hole_geometry.py",
-      "source": "output/mesh_pruned_anchor_20260929/hole_geometry.py",
-      "bytes": 3910,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/holed_index.py",
-      "source": "output/mesh_pruned_anchor_20260929/holed_index.py",
-      "bytes": 4893,
-      "byte_equal_to_source": true
-    },
-    {
-      "file": "system/LICENSE.md",
-      "source": null,
-      "bytes": 4275,
-      "change": "new integration; see docs/method.md"
-    },
-    {
-      "file": "system/bootstrap.py",
-      "source": null,
-      "bytes": 807,
-      "change": "new integration; see docs/method.md"
-    },
-    {
-      "file": "system/data.py",
-      "source": null,
-      "bytes": 3485,
-      "change": "new integration; see docs/method.md"
-    },
-    {
-      "file": "system/full_system.py",
-      "source": null,
-      "bytes": 13286,
-      "change": "new integration; see docs/method.md"
-    },
-    {
-      "file": "system/gpu_occluders.py",
-      "source": null,
-      "bytes": 4965,
-      "change": "new integration; see docs/method.md"
-    },
-    {
-      "file": "system/planning.py",
-      "source": null,
-      "bytes": 477,
-      "change": "new integration; see docs/method.md"
-    },
-    {
-      "file": "system/selection_runtime.py",
-      "source": null,
-      "bytes": 4497,
-      "change": "new integration; see docs/method.md"
     }
   ],
   "summary": {
-    "files": 3551,
-    "unchanged": 3540,
-    "adapted": 4
+    "files": 3735,
+    "unchanged": 3717,
+    "adapted": 9
   }
 }

@@ -17,11 +17,12 @@ def main():
     args=p.parse_args()
     if args.output.exists():raise FileExistsError(args.output)
     from system.bootstrap import configure
-    configure()
+    config=json.loads(args.config.read_text())
+    configure(config.get('model_backend', 'cachegs'))
     import torch
     from data import load
     from selection_runtime import Selection
-    config=json.loads(args.config.read_text());torch.set_grad_enabled(False);torch.set_num_threads(1)
+    torch.set_grad_enabled(False);torch.set_num_threads(1)
     e=load(config);selection=Selection(e,config['occluder_cells'],config.get('cpu_threads',1),config.get('occlusion',True),config.get('occluder_level'))
     local=threading.local();results={}
     def query(frame,cpu):

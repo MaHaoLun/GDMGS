@@ -12,17 +12,26 @@ python render.py --help
 python -m compileall -q system scripts
 ```
 
-**9 tests passed.** Native tests compile and load the actual C++/OpenMP source.
+**13 tests passed.** Native tests compile and load the actual C++/OpenMP source.
 They cover geometric rejection, scale-expanded hole containment, native hole
 planes versus the scalar implementation, indexed-versus-dense agreement on all
 513 generated records with 1/2/4 threads, integer allocation, round-to-even LoD
 thresholds, sparse-cell near-plane subdivision and tensor hole geometry.
+Four model-boundary tests additionally check the unchanged CacheGS container
+precision/ownership, avoidance of mutable fVDB source-state updates, explicit
+backend namespace isolation, and the CacheGS training default.
 Tensor geometry runs on CPU here. It is not evidence that CUDA kernels execute.
 
 An initial combined test run exposed two OpenMP runtimes on macOS. The build
 helper now links the same runtime used by PyTorch and corrects its embedded
 loader path on the newly built library. No global Torch installation was edited
 and no duplicate-runtime-suppression flag was used. The subsequent suite passed.
+
+The CacheGS source snapshot was retrieved read-only from zxcpu2 and its fVDB
+source version/build patch recorded. Both model families have explicit loaders;
+CacheGS is the default. The tensor-container test executes the original
+CacheGS container classes without invoking their fVDB-dependent methods. It
+does not claim a real checkpoint load or rendering validation.
 
 The source tree and original license files are preserved. Machine-readable
 source mappings and byte comparisons are in `source_inventory.json`.
@@ -37,7 +46,8 @@ source. Original-ID and decoder comparisons are exact; output comparison uses
 `atol=rtol=1e-5`. No reduced-view or synthetic substitute is used by that command.
 
 The user explicitly requested local work and declined sending this source to
-zxcpu2. No source transfer or GPU test was performed on that server. There is no
+zxcpu2. No source was uploaded and no GPU test was performed on that server;
+existing sources and dependency metadata were only read/downloaded. There is no
 NVIDIA GPU in the local validation environment. Therefore:
 
 - CUDA source compilation and runtime import closure remain unverified.

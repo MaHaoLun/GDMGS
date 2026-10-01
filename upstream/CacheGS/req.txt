@@ -1,0 +1,16 @@
+plyfile
+tensorboard
+einops
+wandb
+lpips
+laspy
+jaxtyping
+colorama
+opencv-python
+scikit-learn
+PyYAML
+
+
+# need to find your torch cuda version and then ensure the correct link
+# pip install torch-scatter torch-cluster -f https://data.pyg.org/whl/torch-2.4.0%2Bcu124.html
+# pip install gsplat==1.4.0 --index-url https://docs.gsplat.studio/whl/pt24cu124

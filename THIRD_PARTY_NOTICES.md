@@ -16,3 +16,10 @@ nvdiffrast, torch-scatter and other installed dependencies keep their licenses.
 Their private precompiled binaries and trained datasets/checkpoints are not
 included. `docs/source_inventory.json` maps the full source snapshot and all
 integration changes.
+
+`upstream/CacheGS/` preserves the GDMGS_Codebase source snapshot read from
+zxcpu2, including its inherited research-use license. `system/batch.py`,
+`system/raster_backend.py`, and `system/full_bundle_cache.py` are source-derived
+transport components. Original research implementations under `research/`
+retain the source-family licenses. fVDB is an external dependency; its observed
+source commit and local build patch are recorded under `dependencies/`.

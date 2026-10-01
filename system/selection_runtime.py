@@ -6,11 +6,11 @@ import threading
 from pathlib import Path
 import numpy as np
 import torch
-from bootstrap import configure
+from system.bootstrap import configure
 from cpu_selector import CPUSelector
 from fast_geometry import visible_leaf_boxes
 from fused_filter import native as hole_native, filter_ids
-from gdmgs.anchor_frustum.gpu_construction import GPUThreeTrees
+from anchor_frustum.gpu_construction import GPUThreeTrees
 from holed_index import OccluderIndex
 from gpu_occluders import GPUOccluders
 
@@ -18,6 +18,7 @@ from gpu_occluders import GPUOccluders
 def build_cpu():
     root = Path(__file__).resolve().parent
     output = configure() / 'cpu_select.so'
+    output.parent.mkdir(parents=True, exist_ok=True)
     sources = [root / 'cpu_select.cpp', root / 'hole_planes_native.cpp']
     if not output.exists() or any(p.stat().st_mtime_ns > output.stat().st_mtime_ns for p in sources):
         temporary = output.with_suffix('.building.so')
@@ -30,6 +31,11 @@ def build_cpu():
 class Selection:
     def __init__(self, experiment, cells, cpu_threads=1, occlusion=True, grid_level=None):
         self.e = experiment
+        model = experiment.rt.model
+        if getattr(model, '_gdmgs_model_backend', None) == 'cachegs' and model.progressive:
+            cap = int(np.searchsorted(model.coarse_intervals, model._gdmgs_iteration)) + int(model.init_level)
+            if cap < int(model.levels)-1:
+                raise ValueError('shared selection requires a finalized CacheGS LoD checkpoint')
         self.cpu = CPUSelector(experiment, cells, build_cpu(), cpu_threads)
         self.cpu.backend = 'tree_keep'
         self.cpu.hole_backend = self.cpu.candidate_backend = 'native'
@@ -50,6 +56,9 @@ class Selection:
         if float(self.cpu.standard_dist) <= 0 or float(self.cpu.fork) <= 1 or np.any(levels < 0) or np.any(levels > self.cpu.max_level):
             raise ValueError('invalid LoD model parameters')
         radius = float(self.cpu.standard_dist) / np.power(float(self.cpu.fork), levels-.5-self.cpu.extra.astype(np.float64))
+        if getattr(experiment.rt.model, '_gdmgs_model_backend', None) == 'cachegs':
+            # CacheGS LoD uses the anchor directly, without ProxyGS's half-voxel shift.
+            self.cpu.lod_position = self.cpu.anchors.copy()
         self.cpu.canonical_position = np.ascontiguousarray(self.cpu.lod_position, dtype=np.float64)
         self.cpu.canonical_radius2 = np.ascontiguousarray(radius*radius)
         if not np.isfinite(self.cpu.canonical_radius2).all() or np.any(self.cpu.canonical_radius2 <= 0):

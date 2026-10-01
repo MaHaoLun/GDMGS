@@ -8,7 +8,7 @@ import numpy as np
 import torch
 
 from fast_geometry import fast_hole_planes, visible_leaf_boxes
-from gdmgs.anchor_frustum.gpu_construction import GPUThreeTrees, camera_tensor
+from anchor_frustum.gpu_construction import GPUThreeTrees, camera_tensor
 from gdmgs.mesh_index.gpu_index import camera_planes
 
 

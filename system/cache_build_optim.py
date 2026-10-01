@@ -8,8 +8,8 @@ import triton
 import triton.language as tl
 from epoch_cache import EpochArena,FIELDS
 from epoch_pipeline import pipeline_sequence
-from gaussian_renderer import generate_neural_gaussians
-from gaussian_renderer.raster_batch import NeuralGaussianBatch,BundleMetadata,batch_from_proxygs_decode
+from model_bridge import generate_neural_gaussians
+from batch import NeuralGaussianBatch,BundleMetadata,batch_from_proxygs_decode
 
 
 @dataclass(frozen=True)

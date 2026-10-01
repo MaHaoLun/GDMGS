@@ -1,9 +1,9 @@
 # GDM-GS — full source integration
 
-This repository contains the **complete ProxyGS training/model/checkpoint code,
-original native extensions, and the GDM-GS inference pipeline** assembled from
-the GDM-GS experiment versions. The earlier reference-only draft has been
-removed from the working tree; it remains in Git history.
+This repository uses **CacheGS/GDMGS_Codebase as its default training and model
+backend**, together with the GDM-GS native indices, shared decoding and scheduling.
+The independently trained models used by later experiments remain available
+through an explicit `proxygs` compatibility backend.
 
 The integrated pipeline loads a real checkpoint and camera inventory, builds
 native anchor indices, retrieves solid occluder cells, selects original anchor
@@ -16,13 +16,19 @@ qualification, and [method alignment](docs/method.md) for implementation details
 
 ## Contents
 
-- `upstream/ProxyGS/`: full source snapshot: training, loaders, original inference,
+- `upstream/CacheGS/`: read-only snapshot downloaded from zxcpu2
+  `/home/zyl/lun/GDMGS_Codebase`: original training, YAML model configuration,
+  checkpoint loading, pose-local explicit-ID decoding and fresh renderer.
+- `upstream/ProxyGS/`: historical compatibility snapshot: training, loaders, original inference,
   metrics, mesh-depth tools, model code, native rasterizer/backpropagation,
   simple-knn, mesh/anchor indices, tests, and third-party source dependencies.
 - `system/`: retained full-bundle cache, split decoder, staged renderer and
   intersections, native CPU/CUDA selection, solid-cell retrieval, complete-group
   batch scheduling, and configurable checkpoint loading.
-- `train.py`: original proxy-aware training entrypoint.
+- `train.py`: original CacheGS training by default; `--backend proxygs` is explicit.
+- `render_fresh.py`: the preserved CacheGS fresh path, independent of the new shared pipeline.
+- `research/retained/`: source snapshots of the reviewed query, sharing and worker-48 schedule implementations.
+- `docs/source_audit.json`: both checkpoint lineages, source paths and anchor counts.
 - `render.py`: integrated checkpoint-to-image entrypoint.
 - `scripts/`: native builds, solid-cell preparation, measured-rate calibration.
 - `tests/`: real compiled C++ regression tests and device-geometry predicate tests.
@@ -36,8 +42,15 @@ The historical measured environment used Torch 2.4.0+cu124, torchvision
 source and has not been validated as a fresh install in this task.
 
 ```sh
-bash scripts/install_cuda.sh
+bash scripts/install_cuda.sh cachegs
 ```
+
+CacheGS requires the existing compatible **fVDB 0.0.1 build**, whose commit and
+local build fixes are recorded in `dependencies/fvdb-observed.json` and
+`dependencies/fvdb-local.patch`. The installer checks for it and does not replace
+it with an arbitrary package of the same name. The observed source is
+`/home/zyl/XCube/openvdb/fvdb`; reproducing this dependency is a separate build.
+For the historical backend use `bash scripts/install_cuda.sh proxygs`.
 
 `requirements-runtime.txt` deliberately uses Python-3.10-compatible NumPy/SciPy
 constraints instead of blindly copying the newer constraints in the historical
@@ -47,21 +60,23 @@ CMake/pybind11; set `GDMGS_NATIVE_DIR` to the resulting module directory.
 The integrated solid-cell pipeline does not instantiate that legacy mesh index.
 The Vulkan viewer has its separate preserved CMake build and is optional.
 
-## Proxy-aware training
-
-All original training options remain in the bundled entrypoint:
+## Original CacheGS training
 
 ```sh
 python train.py --help
-python train.py -s /data/scene -m /models/scene \
-  --ply_path /data/scene/points.ply --ply_mesh /data/scene/proxy_mesh.ply \
-  --depth_npy_dir /data/scene/proxy_depth --iterations 40000
+python train.py --config /absolute/path/to/training.yaml
 ```
 
-Use the dataset/model settings from the actual experiment's saved training
-protocol. This command shows path wiring; it is not a replacement for those
-settings. Existing checkpoints are loaded without retraining or format conversion.
-Original metrics and native renderer entrypoints remain under `upstream/ProxyGS`.
+Use the original `model_params`, `pipeline_params`, and `optim_params` YAML
+structure. The original training algorithm is unchanged. Its entrypoint retains
+its own GPU-selection and timestamped-output behavior; inspect the preserved
+training source before scheduling jobs on a shared host.
+
+The eight January CacheGS training backups match this training file after only
+the output-directory literal is changed. The later `proxygs_step2` checkpoints
+have separate commands, different anchor counts and a different loader; files
+with the same `point_cloud.ply`/MLP names must not be assumed interchangeable.
+Their training path requires explicit `--backend proxygs` and its original flags.
 
 ## Prepare solid cells
 
@@ -80,7 +95,11 @@ Opaque-solid interiors and free-space camera seeds are required assumptions.
 ## Render all targets
 
 Copy `configs/render.example.json` and set the actual model, dataset and cell
-paths. By default, all checkpoint camera IDs are rendered; an explicit
+paths. `model_backend` defaults to `cachegs`, which loads `config.yaml` through
+the original loader. `configs/render.proxygs.example.json` explicitly selects
+`cfg_args` compatibility. Mixing both source namespaces in one process fails.
+CacheGS scale/rotation rounding and anchor-based LoD positions are preserved.
+By default, all checkpoint camera IDs are rendered; an explicit
 `camera_ids` list can specify a frozen trajectory. `interpolation=4` produces
 125 targets from 32 supplied cameras. Set `expected_targets` to enforce the
 intended denominator. No target limit or silent capacity fallback exists.
@@ -123,7 +142,7 @@ and one or two target workers; unsupported settings fail explicitly.
 ## Local checks
 
 ```sh
-python -m pip install numpy scipy torch pytest
+python -m pip install numpy scipy torch pytest einops
 python -m pytest -q tests
 python render.py --help
 ```

@@ -9,3 +9,4 @@ dist/
 *.pt
 *.ply
 *.npz
+outputs/
