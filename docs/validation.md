@@ -1,44 +1,54 @@
-# Validation of the consolidation
+# Validation status — full integration
 
-Local validation on 2026-10-01 used macOS arm64, Python 3.13, NumPy 2.5.3,
-SciPy 1.18.1 and PyTorch 2.14.1 in a separate temporary environment.
+## Work performed locally
 
-Commands:
+Date: 2026-10-01. Host: macOS arm64. Test environment: Python 3.13,
+NumPy 2.5.3, SciPy 1.18.1, PyTorch 2.14.1. This is a CPU test environment,
+not the historical CUDA rendering environment.
 
 ```sh
-python -m pip install --no-build-isolation --no-deps -e .
-python -m pytest -q
-python examples/query.py
-python -m compileall -q gdmgs examples
-git diff --check
+python -m pytest -q tests
+python render.py --help
+python -m compileall -q system scripts
 ```
 
-Result: **19 passed, 1 skipped**. The skipped test requires CUDA hardware.
-The example returned original anchor ID `[0]`. Editable package installation
-and compilation passed. CI repeats the CPU tests on Linux/Python 3.11;
-its result must be checked separately after publication.
+**9 tests passed.** Native tests compile and load the actual C++/OpenMP source.
+They cover geometric rejection, scale-expanded hole containment, native hole
+planes versus the scalar implementation, indexed-versus-dense agreement on all
+513 generated records with 1/2/4 threads, integer allocation, round-to-even LoD
+thresholds, sparse-cell near-plane subdivision and tensor hole geometry.
+Tensor geometry runs on CPU here. It is not evidence that CUDA kernels execute.
 
-Tests cover dense-oracle agreement of the indexed query and tensor port,
-near-plane subdivision, partial-hole conservativeness, duplicate Morton keys,
-empty inputs, closed/open mesh flood fill, camera centers, integer allocation,
-row ownership, target membership, exact row admission, failure cancellation,
-complete-batch barriers, output ordering, and partial tail groups. A mocked
-raster API test checks shared-attribute identity and target opacity isolation;
-it does not validate gsplat image output.
+An initial combined test run exposed two OpenMP runtimes on macOS. The build
+helper now links the same runtime used by PyTorch and corrects its embedded
+loader path on the newly built library. No global Torch installation was edited
+and no duplicate-runtime-suppression flag was used. The subsequent suite passed.
 
-## Required before claiming a production or paper-result release
+The source tree and original license files are preserved. Machine-readable
+source mappings and byte comparisons are in `source_inventory.json`.
 
-1. Run CUDA selector parity on the intended GPU and all frozen scene cameras,
-   using the same eligibility rule and certified bounds on both processors.
-2. Load the original frozen ProxyGS checkpoints. Compare split decode tensors
-   and row identity to the original decoder, including empty and zero-row cases.
-3. Run real gsplat output comparisons for RGB, alpha and depth, then the full
-   source-reuse quality protocol. The scalar clip settings are now passed from
-   `Camera` to gsplat explicitly and must be included in the comparison.
-4. Measure selection calibration, CPU transfer, batch storage, shared rows,
-   workspace and end-to-end wall time at the selected worker counts.
-5. Validate model/dataset lineage and unchanged full denominators. Unit tests
-   and synthetic examples do not replace those scene-level checks.
+## Full CUDA validation provided, but not executed
 
-No GPU run, model training, checkpoint render, historical FPS reproduction,
-or full-data quality acceptance was performed by this consolidation task.
+`python render.py --config SCENE.json --output NEW_DIR --verify` is the actual
+checkpoint-driven validation entrypoint. It checks all selected IDs on both
+processors, every group's split decode against the original decoder, and every
+RGB/alpha/depth output against the original gsplat handoff for that same shared
+source. Original-ID and decoder comparisons are exact; output comparison uses
+`atol=rtol=1e-5`. No reduced-view or synthetic substitute is used by that command.
+
+The user explicitly requested local work and declined sending this source to
+zxcpu2. No source transfer or GPU test was performed on that server. There is no
+NVIDIA GPU in the local validation environment. Therefore:
+
+- CUDA source compilation and runtime import closure remain unverified.
+- The new threshold LoD rule and support-expanded hole tests need all-scene
+  comparison; old archived PASS results do not cover those changes.
+- No real checkpoint was loaded, no new training was run, and no new RGB/depth
+  quality or performance result was produced by this task.
+- Source-reuse quality versus independent fresh target decoding remains a
+  separate acceptance gate. The renderer-equivalence check does not prove it.
+- Fresh environment installation and optional viewer/legacy mesh-index builds
+  remain untested. Their complete sources and build instructions are included.
+
+The PR must remain a draft until those checks pass. In particular, this document
+does not label the complete integration as GPU-validated or publication-ready.

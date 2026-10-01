@@ -1,0 +1,17 @@
+{
+  "source": "installed gsplat 1.4.0+pt24cu124",
+  "installed_package": "/ssddata/lun/gdmgs_artifacts/proxygs_step5_cpu_anchor_index_g2_20260915/env/proxy-gs-cu124/lib/python3.10/site-packages/gsplat",
+  "canonical_symlink_target": "/ssddata/lun/gdmgs_artifacts/proxygs_step2_20260913/env/proxy-gs-cu124/lib/python3.10/site-packages/gsplat",
+  "license": "Apache-2.0; full installed LICENSE retained beside derived source",
+  "source_sha256": {
+    "isect_tiles.cu": "8aaeb188baf9f5ded3be9aa705b36f8bc0cde0997d4497cc0bf713f11bb7ec5e",
+    "bindings.h": "502e57f559df10642712af7e85566adfa68359e1ab30edbe209461219d38e92c",
+    "helpers.cuh": "266a9344c3e4404007de1b41df29dddf33277afcc9010c7974d2482191b4bfce",
+    "types.cuh": "59a61c7562b87c01815b6810a8763bff0b9053e303c7a0c4c294b553773e26a0"
+  },
+  "adaptation": "Original isect_tiles kernel copied unchanged; original second pass and stable CUB sort copied unchanged. Separate host count wrapper returns GPU prefix and scalar view. Finish receives previously read host count. Added explicit metadata/index guards. Installed package and historical source remain unmodified.",
+  "headers": "Build reads original installed bindings.h, helpers.cuh, types.cuh and third_party/glm headers; these files are not edited.",
+  "scope": "float32, packed=False, C >= 1; all count/fill/sort work on current CUDA stream. Empty input supported. No backward API.",
+  "count_safety": "n_isects must be the exact read_totals entry from corresponding immutable CountState. Counts outside nonnegative signed-int32 range raise rather than truncate. Rasterizer int32 range retained.",
+  "synchronization": "read_totals stacks the GPU scalar views and makes exactly one CPU copy per group. No .item or other scalar readback in count/finish. Cross-stream callers join events before read_totals and record tensor lifetimes. Normal allocation, including CUB scratch allocation, remains; no claim of fully asynchronous dynamic allocation."
+}

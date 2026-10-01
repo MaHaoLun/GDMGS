@@ -1,0 +1,7 @@
+# Preserve third-party source formatting and license texts byte for byte.
+upstream/** -whitespace
+system/LICENSE.md -whitespace
+system/staged_isect_src/** -whitespace
+# These unchanged upstream files use seven '=' characters as prose separators.
+upstream/ProxyGS/ProxyGS-Vulkan-Cuda-Interop/nv_repo/nvpro_core2/third_party/stb/stb_sprintf.h conflict-marker-size=32
+upstream/ProxyGS/ProxyGS-Vulkan-Cuda-Interop/nv_repo/nvpro_core2/third_party/zstd/TESTING.md conflict-marker-size=32

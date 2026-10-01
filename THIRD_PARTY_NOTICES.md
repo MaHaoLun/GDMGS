@@ -1,13 +1,18 @@
 # Third-party notices
 
-`gdmgs/adapters/` contains code extracted or adapted from the local Proxy-GS
-snapshot `Proxy-GS-eac937e8`, the GDM-GS gsplat handoff, and the full-block
-decoder derived from that model. The inherited Gaussian-Splatting license is
-preserved in `gdmgs/adapters/LICENSE.md`. That directory remains subject to
-its research-use terms; it is not relicensed under the root Apache license.
+`upstream/ProxyGS/` preserves the complete local Proxy-GS-eac937e8 source tree
+and its third-party licenses. Its native anchor construction/query directory
+is overlaid from the later GDM-GS joint-query experiment's retained source.
 
-NumPy, SciPy, PyTorch and gsplat are external dependencies with their own
-licenses. Their implementation sources and binary packages are not vendored.
+`system/` contains source derived from that model/renderer plus GDM-GS research
+implementations. The inherited research-use license is preserved in
+`system/LICENSE.md`; the original repository's Apache license does not override
+these terms. Source copyright headers and bundled third-party license files
+remain in place.
 
-`docs/source_manifest.json` identifies extracted functions, adaptations, and
-new assembly code. It contains project-relative provenance paths only.
+The staged gsplat intersection extension retains its own LICENSE and source
+provenance under `system/staged_isect_src/`. PyTorch, gsplat, NumPy, SciPy,
+nvdiffrast, torch-scatter and other installed dependencies keep their licenses.
+Their private precompiled binaries and trained datasets/checkpoints are not
+included. `docs/source_inventory.json` maps the full source snapshot and all
+integration changes.

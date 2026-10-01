@@ -1,63 +1,67 @@
-# Method alignment
+# Method and actual implementation
 
-The supplied method text is the specification for this consolidation. The
-[Notion project record](https://www.notion.so/3d8efdb220d0818d8259ef0bfe6a1d0e)
-and its [sharing](https://www.notion.so/3e3efdb220d081f3a10ae330ddb679a1) and
-[scheduling](https://www.notion.so/3ddefdb220d081a1a86ccd20332ee528) pages provide
-source lineage and historical experimental scope, not validation of this code.
+Sources were selected using the supplied method TeX and the
+[Notion project record](https://www.notion.so/3d8efdb220d0818d8259ef0bfe6a1d0e),
+[sharing history](https://www.notion.so/3e3efdb220d081f3a10ae330ddb679a1), and
+[scheduling history](https://www.notion.so/3ddefdb220d081a1a86ccd20332ee528).
 
-| Method operation | Implementation | Consolidation choice |
-| --- | --- | --- |
-| Pose-independent anchor bounds | `anchor_bounds` | Candidate-center envelope plus caller-certified radius |
-| Morton sort and radix grouping | `AnchorIndex.build` | New portable builder with stable equal-key handling and contiguous subtree intervals |
-| Cull / Keep / Descend | `anchor_walk` | Extracted reference, sorted at the public boundary |
-| Boundary and free-space classification | `make_grid` | Extracted conservative triangle-AABB marking and 26-neighbor flood, including outside seeds |
-| Merge eight solid children | `make_grid`, `OccluderIndex` | Maximal full cells, implicit full-child subdivision at the near plane |
-| Hole construction and active-hole propagation | `hole_planes`, `anchor_walk` | Extracted single-hole proof predicate; no union-coverage approximation |
-| Sorted group union and membership | `union_plan`, `SharedRows` | Adapted from G4, dynamic Boolean table supports actual tail length |
-| Center source pose | `source_camera` | Adapted center interpolation/SLERP with explicit world-to-camera convention |
-| One source decode | `ProxyGSDecoder` | Extracted opacity/attribute split; explicit union is never reselected |
-| Per-target projection and sorting | `GSplatRenderer` | Shared attributes, private membership-masked opacity; gsplat performs target projection/sort |
-| Selection on both processors | `CPUSelector`, `TensorSelector` | New portable tensor port of the reference predicates |
-| Batch barrier and rate allocation | `Schedule`, `cpu_quota` | Adapted integer allocation, complete groups, CPU transfer finishes before barrier |
-| Retained-row capacity | `Admission` | FIFO, exact opacity count, release after final target completes |
+| Method stage | Complete implementation |
+| --- | --- |
+| Proxy-aware training/model/checkpoint | Bundled original `train.py`, `scene`, `gaussian_renderer`, native raster/backward kernels |
+| Anchor bounds and Morton radix index | `gdmgs/anchor_frustum/gpu_construction.py` and all native construction/query sources |
+| CPU Cull/Keep/Descend | `system/cpu_select.cpp`, including active-hole propagation and contiguous subtree reporting |
+| Solid classification and merge | `system/occupancy.py`, exposed by `scripts/prepare_occluders.py` |
+| Occluder octree / near-plane subdivision | `holed_index.py`; device-resident `gpu_occluders.py` |
+| CPU/GPU hole predicates | `hole_planes_native.cpp`, `gpu_occluders.py`, `hole_filter.cu` |
+| Stable IDs and union/membership | Retained `cache_build_optim.py`, `PlannedArena`, `PriorityRenderer` demand bits |
+| Source pose and split decode | Retained `epoch_cache.py`, `dense_math.py`, `fullblock_timed.py` |
+| Per-target projection/sort/render | Retained `priority_renderer.py`, `parallel_renderer.py`, staged intersection C++/CUDA and Triton sanitization |
+| CPU/GPU allocation and barrier | `planning.py`, `full_system.py`, explicit completion events and bounded complete batches |
+| Exact-row admission | Retained `Admission`, before attribute materialization; no capacity-driven truncation |
 
-## Versions deliberately kept separate
+## Corrections introduced during integration
 
-`GDMGS_Codebase` is an earlier fresh/compatibility pipeline. Later ProxyGS
-experiments added a matching gsplat backend and several cache/schedule variants.
-The October 1 combined anchor/triangle traversal runs with occlusion disabled;
-it is not the supplied method's solid-cell holed-frustum implementation. The
-older depth-map filtering path and pair2 cache policy are also different methods.
-They are therefore not silently selected as this package's default.
+1. Historical hole tests used candidate-center boxes while frustum tests used
+   the stored scale bound. Both native CPU and CUDA hole predicates now expand
+   the center envelope by `3 * max_scale` on each axis. A compiled regression
+   test covers an anchor with hidden centers but support outside the hole.
+2. Historical CPU/GPU `log2` rounding produced isolated LoD differences. Both
+   processors now compare squared distance against the same precomputed double
+   threshold. Round-to-even equality is explicit; GPU uses round-to-nearest
+   operations without FMA. This changes the implementation at native rounding
+   boundaries and requires full-scene GPU/image requalification.
+3. Full occluder cells crossing the near plane are subdivided down to the
+   declared grid level, instead of discarding the whole parent. CPU and device
+   retrieval use the same sparse region-octree structure.
+4. The full source decoder and fused renderer replace the previous draft's
+   tensor reference renderer. No old absolute experiment source paths are needed
+   by the integrated entrypoint. Inputs and build caches are explicit.
 
-The old optimized low-level gsplat renderer fused membership into preprocessing.
-This package reuses the simpler extracted gsplat API and masks opacity before
-that call. It still projects shared rows, so it does not claim identical work,
-memory use, or performance to the optimized kernels.
+## Boundaries that must remain explicit
 
-## Preconditions and limits
+The runtime retains the original renderer-aware projected support rejection in
+its anchor kernels. This is more involved than the TeX's pure six-plane AABB
+presentation. GPU execution first queries the anchor index and then evaluates
+holes for survivors; CPU execution additionally prunes whole hidden subtrees.
+They implement the same per-anchor predicate, but do not have identical work.
 
-- The mesh must describe opaque solid interiors and training cameras must seed
-  the relevant free-space components. Flood fill alone cannot prove every
-  unreachable cavity is material. Holes/open surfaces can reduce pruning.
-- Triangle AABBs overmark boundary cells. The reference grid costs O(8^L) memory
-  and supports L=0..8 explicitly. It does not silently reduce a requested level.
-- Anchor and occluder domains must match. Caller-certified radii must account
-  for the decoder and renderer support; a naive world-space three-sigma bound
-  is not automatically a proof for a rasterizer with screen-space dilation.
-- CPU/GPU LoD eligibility must match. The archive recorded isolated floating
-  LoD-boundary exceptions; this package does not accept mismatches automatically.
-- Torch traversal is host-driven and synchronization-heavy. The package contains
-  executable CUDA-device code, but CUDA was unavailable for local qualification.
-- A row capacity bounds retained shared attributes only. Decoder candidates,
-  ID lists, masks, projection, sorting, and image workspaces need separate memory.
-- Render callbacks must be read-only, synchronous, and return independent
-  outputs. The supplied adapter returns host images. Host output storage grows
-  with trajectory length; only selected-ID batches and shared rows are bounded.
-- Core grouping accepts any positive K. The inherited experiments qualified
-  particular K values and workloads; arbitrary K has no inherited quality claim.
-- This is inference code, not a replacement for ProxyGS training or its loader.
+The `3 * max_scale` correction covers the decoder's finite Gaussian support.
+A blanket proof of lossless occlusion for gsplat's additional screen-space
+covariance dilation has not been established here. Mesh opacity/interior
+assumptions also remain necessary. Therefore neither the paper's absolute
+soundness claim nor historical image-quality numbers should be attributed to
+this integration without full renderer-level validation.
 
-New integration code is listed explicitly in the source manifest. Existing
-experiment directories and artifacts were left intact.
+The archived optimized joint anchor/triangle query is a different selection
+variant. It is not silently substituted for solid-cell occlusion. The current
+root path uses the supplied method's solid cells; legacy depth/native paths
+remain available in the complete upstream source tree.
+
+The retained union puts the first target's sorted IDs before remaining IDs.
+That is a physical layout choice; original anchor IDs and per-target membership
+are retained explicitly. It differs from a globally sorted physical union in
+the TeX, without changing which anchors belong to each target.
+
+This task was restricted to local work by the user. CUDA compilation/execution,
+original-checkpoint tensor parity and full target quality were not run for this
+integration. No historical PASS is reused as its acceptance result.
