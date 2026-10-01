@@ -2,7 +2,7 @@
 
 This repository contains the **complete ProxyGS training/model/checkpoint code,
 original native extensions, and the GDM-GS inference pipeline** assembled from
-the VISTA experiment versions. The earlier reference-only draft has been
+the GDM-GS experiment versions. The earlier reference-only draft has been
 removed from the working tree; it remains in Git history.
 
 The integrated pipeline loads a real checkpoint and camera inventory, builds
@@ -11,10 +11,8 @@ IDs, materializes each group's union once, and renders every target with the
 retained staged gsplat/Triton renderer. It does not require the old experiment
 directory, a saved selected-ID trace, or a prebuilt private `.so`.
 
-**Validation status:** local native CPU and geometry tests are available.
-The new integration and its CUDA changes have not been run on a GPU. Do not
-interpret source completeness as completed image-quality/performance acceptance.
-See [validation](docs/validation.md) and [method alignment](docs/method.md).
+See [validation](docs/validation.md) for completed checks and remaining GPU
+qualification, and [method alignment](docs/method.md) for implementation details.
 
 ## Contents
 
