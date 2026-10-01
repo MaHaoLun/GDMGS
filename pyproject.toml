@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gdmgs"
+version = "0.1.0"
+description = "A compact, traceable implementation of the GDM-GS method interfaces"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+
+[project.optional-dependencies]
+tensor = ["torch>=2.4"]
+render = ["torch>=2.4", "gsplat==1.4.0"]
+test = ["pytest>=8", "torch>=2.4"]
+
+[tool.setuptools.packages.find]
+include = ["gdmgs*"]
+
+[tool.setuptools.package-data]
+"gdmgs.adapters" = ["LICENSE.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
