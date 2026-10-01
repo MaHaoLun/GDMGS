@@ -1,13 +1,9 @@
 # GDM-GS
 
-A compact method-core consolidation of the VISTA / GDM-GS research code.
+A compact method-core consolidation of the  GDM-GS research code.
 It follows the supplied method's three stages: spatial selection, group-shared
 materialization, and a CPU/GPU selection barrier followed by bounded rendering.
 
-**Status:** portable reference integration with extracted ProxyGS/gsplat adapters.
-This is not a reproduction of the optimized historical experiment runtime.
-CUDA execution and checkpoint/image-quality regression remain unverified for
-this integration. Historical FPS and quality results do not transfer to it.
 
 ## Layout
 
